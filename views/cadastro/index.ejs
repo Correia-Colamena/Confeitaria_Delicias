@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Confeitaria Delícias</title>
+    <link rel="stylesheet" href="../../public/assets/global.css">
+    <link rel="stylesheet" href="../../public/assets/cadastro.css">
+    <link rel="stylesheet" href="../../public/assets/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <section class="cadastro">
+        <h2>Cadastro</h2>
+        <form id="cadastro">
+            <div class="form-group">
+                <input placeholder="nome" type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <input placeholder="email" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input placeholder="senha" type="password" id="senha" name="senha" required>
+            </div>
+            <span><a href="/login">Já Possui uma conta? Faça login</a></span>
+            <button class="btn" type="submit">Cadastrar</button>
+        </form>
+    </section>
+
+    <script src="../../controllers/global.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('cadastro').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const senha = document.getElementById('senha').value;
+
+                fetch(`/cadastro-user/${nome}/${email}/${senha}`)
+                    .then(response => {
+                        if (response.ok) {
+                            window.location.href = '/login';
+                        } else {
+                            // Trate o erro se necessário
+                            alert('Erro ao cadastrar. Tente novamente.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('Erro ao cadastrar. Tente novamente.');
+                    });
+
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Produtos</title>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <div id="prod">
+
+    </div>
+    <!-- Formulário para criar um novo item -->
+  <h2>Criar Novo Item</h2>
+  <form id="create-form">
+    Nome: <input type="text" id="create-nome" required>
+    Descricao: <input type="text" id="create-descricao" required>
+    Preço: <input type="number" id="create-preco" min="1" required>
+    <button type="submit">Criar</button>
+  </form>
+
+  <h2>Atualizar Item</h2>
+  <form id="update-form">
+    Id: <input type="text" id="update-id" required>
+    Nome: <input type="text" id="update-nome" required>
+    Descrição: <input type="text" id="update-descricao" required>
+    Preço: <input type="number" id="update-preco" min="1" required>
+    <button type="submit">Atualizar</button>
+  </form>
+  <h2>Promover Produto</h2>
+  <form id="promover_produto">
+    Id: <input type="number" id="id-promover">
+    Desconto(%): <input type="number" id="desconto" >
+    <button type="submit" id="promover">Promover</button>
+  </form>
+  <h2>Tirar em Promoção</h2>
+  <form>
+    Id: <input type="number" id="id-despromover">
+    <button type="submit" id="despromover">Despromover</button>
+  </form>
+
+    <script src="../controllers/produtosControllers.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+.servicos{
+    text-align: center;
+    margin: 20px 30px;    
+}
+
+.servico{
+    flex-wrap: wrap;
+}
+.servicos p{
+    text-align: justify;
+
+}
+
+.descricao{
+    margin: 10px;
+    max-width: 750px;
+}
+
+.aderir img{
+    width: 500px;
+    border-radius: 10px;
+
+}
+
+.aderir{
+    margin: 10px;
+    flex-direction: column;
+
+}
+
+button{
+    background-color: #ff007f;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.servico{
+    display: flex;
+}

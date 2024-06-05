@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta - Confeitaria Delícias</title>
+    <link rel="stylesheet" href="../../public/assets/global.css">
+    <link rel="stylesheet" href="../../public/assets/conta.css">
+    <link rel="stylesheet" href="../../public/assets/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1><span>Confeitaria</span> Delícias</h1>
+        <nav>            
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/produtos">Produtos</a></li>
+                <li><a href="/servicos">Serviços</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/contato">Contato</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icon-container">
+            <div>
+                <a href="/carrinho"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <a href="/conta"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <i class="fa fa-bars menu-button" aria-hidden="true"></i>
+            </div>            
+        </div>
+    </header>
+
+    <section class="conta">
+        <h4 id="l">Nenhuma conta logada!</h4>
+        <!-- <h2>Minha Conta</h2> Detalhes da conta do usuário, como informações pessoais, histórico de pedidos, etc. -->
+        <div class="informacoes" id="informacoes">
+            
+        </div>
+        <div class="historico-pedidos" id="historico-pedidos">
+            <!--<h3>Histórico de Pedidos</h3> -->
+            <!-- Aqui você pode listar o histórico de pedidos do usuário -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Confeitaria Delícias</p>
+    </footer>
+    <script src="../../controllers/global.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function fetchData() {
+                fetch('/informacoes')
+                    .then(response => response.json())
+                    .then(informacoes => {
+                        const container = document.getElementById('informacoes');
+                        container.innerHTML = '';
+
+                        informacoes.forEach(informacao => {
+                            const div = document.createElement('div');
+                            div.innerHTML = `<div class="informacao">
+                            <h3>Bem-vindo(a), ${informacao.nome}!</h3> 
+                            <p>Email: ${informacao.email}</p> 
+                            <p>Senha: ${informacao.senha}</p> 
+                            <div class="editar">
+                                <form id="editar">
+                                    Nome: <input placeholder="nome" type="text" id="nome" name="nome" required>
+                                    Email: <input placeholder="email" type="email" id="email" name="email" required>
+                                    Senha: <input placeholder="senha" type="password" id="senha" name="senha" required>
+                                    Seu id ${informacao.id}
+                                    <button class="btn" onclick="atualizar(${informacao.id})">Atualizar</button>
+                                </form>
+                            </div>
+                            <br/>
+                            <div>
+                                <button class="btn" id="sair" onclick="logout(${informacao.id})"">Sair</button>
+                            </div>
+                            <br/>
+                            <div>
+                                <button class="btn" onclick="eliminarConta(${informacao.id})">Eliminar a Conta</button>
+                            </div>
+                            </div>
+                            `;
+                            container.appendChild(div);
+                        });
+                    })
+                    .catch(error => console.error('Erro ao buscar dados:', error));
+            }
+
+            window.atualizar = function(id){
+                const nome = document.getElementById('nome').value;
+                const email = document.getElementById('email').value;
+                const senha = document.getElementById('senha').value;
+
+                fetch(`/update-user/${id}/${nome}/${email}/${senha}`)
+            }
+
+            window.eliminarConta = function(id) {
+                fetch(`/delete-user/${id}`)
+            }
+
+            fetchData();
+
+            window.logout = function(id){
+                fetch(`/logout`)
+                    .then(response => response.json())
+                    .then(response => {
+                        if (response.mensagem) {
+                            window.location.href = '/login';
+                        } else {
+                            // Trate o erro se necessário
+                            alert('Erro ao terminar sessão')
+                        }
+                    })
+                    .catch(error => console.log('Erro:', error))
+            }       
+            
+        })
+    </script>
+</body>
+</html>

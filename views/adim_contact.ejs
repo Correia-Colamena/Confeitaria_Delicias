@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Contato</title>
+</head>
+<body>
+    <h1>Contatos</h1>
+    <div id="contato">
+
+    </div>
+    <!-- Formulário para criar um novo item -->
+  <h2>Adicionar Informação</h2>
+  <form id="create-form">
+    Endereco: <input type="text" id="create-endereco" required>
+    Telefone: <input type="number" id="create-telefone" min="1" required>
+    Email: <input type="email" id="create-email" required>
+    <button type="submit" id="add" >Adicionar</button>
+  </form>
+
+  <h2>Edite seus dados</h2>
+  <form id="update-form">
+    Id: <input type="text" id="update-id" required>
+    Endereco: <input type="text" id="update-endereco" required>
+    Telefone: <input type="number" id="update-telefone" min="1" required>
+    Email: <input type="email" id="update-email" required>
+    <button type="submit">Atualizar</button>
+  </form>
+    
+
+    <script src="../controllers/contactControllers.js"></script>
+</body>
+</html>

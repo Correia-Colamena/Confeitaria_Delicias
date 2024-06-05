@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Confeitaria Delícias</title>
+    <link rel="stylesheet" href="../../public/assets/global.css">
+    <link rel="stylesheet" href="../../public/assets/carrinho.css">
+    <link rel="stylesheet" href="../../public/assets/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1><span>Confeitaria</span> Delícias</h1>
+        <nav>            
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/produtos">Produtos</a></li>
+                <li><a href="/servicos">Serviços</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/contato">Contato</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icon-container">
+            <div>
+                <a href="/carrinho"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <a href="/conta"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <i class="fa fa-bars menu-button" aria-hidden="true"></i>
+            </div>            
+        </div>
+    </header>
+
+    <section class="carrinho">
+        <h2>Meu Carrinho</h2>
+        <!-- Lista de itens no carrinho -->
+        <div class="item-carrinho">
+            <img src="../../public/img/products/bolo-de-chocolate-com-morango.avif" alt="Bolo de Aveia">
+            <h3>Bolo de Chocolate com Morango</h3>
+            <p><strong>Descrição:</strong>Um bolo de chocolate com morango é uma combinação irresistível de sabores. O bolo de chocolate, rico e indulgente, é complementado pela doçura e frescor dos morangos. Uma sobremesa deliciosa que agrada a todos os paladares.</p>
+            <p><strong>Quantidade:</strong> <button>-</button> <input type="number" min="1" value="1"><button>+</button></p>
+            <p><strong>Preço:</strong> 20 000 kz</p>
+            <button>Remover</button>
+        </div>
+        <div class="item-carrinho">
+            <img src="../../public/img/products/bolo-de-aveia.jpeg" alt="Bolo de Aveia">
+            <h3>Bolo de Aveia</h3>
+            <p><strong>Descrição:</strong> O nosso bolo de aveia combina textura macia com o sabor suave e terroso da aveia, aromatizado com baunilha e especiarias. Delicioso e reconfortante, perfeito para qualquer momento do dia.</p>
+            <p><strong>Quantidade:</strong> <button>-</button> <input type="number" min="1" value="2"><button>+</button></p>
+            <p><strong>Preço:</strong> 30 000 kz</p>
+            <button>Remover</button>
+        </div>
+        <!-- Outros itens do carrinho -->
+        <div class="total">
+            <h3>Total: 50 000 kz</h3>
+            <button>Finalizar Compra</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Confeitaria Delícias</p>
+    </footer>
+    <script src="../../controllers/global.js"></script>
+</body>
+</html>

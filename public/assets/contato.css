@@ -1,0 +1,60 @@
+.contato{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: justify;
+    padding: 20px;
+    background: linear-gradient(#00000050, #00000022),  url(../../public/img/products/Bolo-de-morango.jpg);
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+.btn{
+	background-color:#ff007f;
+	padding: 10px 25px;
+	border: none;
+	color: white;
+	border-radius: 10px;
+	font-size: 16;
+	cursor: pointer;
+}
+
+.form {
+    padding: 20px;
+    text-align: justify;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.informacoes-contato {
+    margin-top: 40px;
+    text-align: justify;
+    width: 50%;
+    color: white;
+}
+
+textarea, input{
+	width: 80%;
+	border: 2px solid #ccc;
+	outline: none;
+	padding: 10px;
+	border-radius: 5px;
+	color: #112233;
+	transition: 0.3s;
+}
+
+textarea{
+    height: 100px;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #db3082; 
+    padding: 20px; 
+    text-align: center; 
+    color: #fff;
+}

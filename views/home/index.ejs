@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confeitaria Delícias</title>
+    <link rel="stylesheet" href="../../public/assets/home.css">
+    <link rel="stylesheet" href="../../public/assets/global.css">
+    <link rel="stylesheet" href="../../public/assets/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1><span>Confeitaria</span> Delícias</h1>
+        <nav>            
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/produtos">Produtos</a></li>
+                <li><a href="/servicos">Serviços</a></li>
+                <li><a href="/sobre">Sobre</a></li>
+                <li><a href="/contato">Contato</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+        <div class="nav-icon-container">
+            <div>
+                <a href="/carrinho"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <a href="/conta"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+            </div>
+            <div>
+                <i class="fa fa-bars menu-button" aria-hidden="true"></i>
+            </div>            
+        </div>
+    </header>
+    <section class="hero">
+        <h2>Bem-vindo à Confeitaria Delícias</h2>
+        <p>Descubra nossos deliciosos bolos, doces e muito mais!</p>
+    </section>
+
+    <section class="produtos">
+        <h2>Mais Procurados</h2>
+        <div id="data-cotainer" class="prod"></div>
+        <h2>Em promoção</h2>       
+        <div class="prod" id="prom"></div>        
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Confeitaria Delícias</p>
+    </footer>
+
+    <script src="../../controllers/global.js"></script>
+    <script src="../../controllers/produtosControllers.js"></script>
+</body>
+</html>

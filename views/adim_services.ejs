@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Serviço</title>
+</head>
+<body>
+    <h1>Serviços</h1>
+    <div id="data-container">
+
+    </div>
+    <!-- Formulário para adicionar um novo serviço -->
+  <h2>Adicionar Novo Serviço</h2>
+  <form id="create-form">
+    Titulo: <input type="text" id="create-nome" required>
+    Descricao: <input type="text" id="create-descricao" required>
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h2>Editar Serviço</h2>
+  <form id="update-form">
+    Id: <input type="text" id="update-id" required>
+    Titulo: <input type="text" id="update-nome" required>
+    Descrição: <input type="text" id="update-descricao" required>
+    <button type="submit">Atualizar</button>
+  </form>
+    
+
+    <script src="../controllers/servicesControllers.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+.sobre h2{
+    text-align: center;
+}
+
+.sobre p{
+    text-align: justify;
+    width: 700px;
+    margin: 40px;
+}
+
+.sobre{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #db3082; 
+    padding: 20px; 
+    text-align: center; 
+    color: #fff;
+}

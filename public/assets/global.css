@@ -1,0 +1,120 @@
+
+*{
+	box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #db3082;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.nav-icon-container{
+    display: flex;
+}
+.nav-icon-container i{
+    margin: 10px;
+    font-size: 25px;
+    color: white;
+}
+
+.nav-icon-container a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-icon-container .menu-button{
+    display: none;
+}
+
+nav{
+    text-align: center;margin: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    background: linear-gradient(#00000050, #00000022),  url(../../public/img/products/Bolo-de-morango.jpg);
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    font-weight: bold;
+    height: 400px;
+}
+/* Responsividade */
+@media (max-width: 800px) {
+    .nav-icon-container .menu-button{
+        display: block;
+    }
+   nav{
+        position: absolute;
+        background-color: #db3082;
+        width: 90%;
+        top: 70px;
+        display: none;
+   }
+   .show-menu nav{
+    display: block;
+   }
+   nav ul li{
+    display: block;
+    position: relative;
+    text-align: center;
+    background-color: #db3082;
+    padding: 0.8rem;
+    font-size: 1rem;
+    z-index: 9999;
+   }
+}
+
+
+/**/
+
+.btn{
+	background-color:#ff007f;
+	padding: 10px 25px;
+	border: none;
+	color: white;
+	border-radius: 5px;
+	font-size: 16;
+	cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background-color:#e51a7c ;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #db3082; 
+    padding: 20px; 
+    text-align: center; 
+    color: white;
+}

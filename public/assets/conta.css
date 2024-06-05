@@ -1,0 +1,12 @@
+.conta{
+    text-align: center;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #db3082; 
+    padding: 20px; 
+    text-align: center; 
+    color: #fff;
+}
